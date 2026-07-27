@@ -55,18 +55,18 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 function SidebarBrand() {
   return (
     <div className="flex items-center gap-3 border-b border-sidebar-border px-4 py-5">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white p-1.5 shadow">
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow">
         <Image
           src="/images/firerescue.webp"
           alt="Fire Rescue Rauora crest"
-          width={44}
-          height={44}
+          width={56}
+          height={56}
           className="h-full w-full object-contain"
           priority
         />
       </div>
       <div className="leading-tight">
-        <p className="text-sm font-semibold text-sidebar-fg-active">
+        <p className="text-base font-semibold text-sidebar-fg-active">
           BOPRP Fire
         </p>
         <p className="text-xs text-sidebar-fg">Department Portal</p>
@@ -82,18 +82,28 @@ export function Sidebar() {
     <>
       {/* Mobile top bar */}
       <header className="sticky top-0 z-30 flex items-center justify-between border-b border-sidebar-border bg-sidebar px-4 py-3 md:hidden">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white p-1 shadow">
+        <div className="flex min-w-0 items-center gap-2">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5 shadow">
             <Image
               src="/images/firerescue.webp"
               alt="Fire Rescue Rauora crest"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               className="h-full w-full object-contain"
               priority
             />
           </div>
-          <span className="text-sm font-semibold text-sidebar-fg-active">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-white/25">
+            <Image
+              src="/images/boprplogo.webp"
+              alt="Bay of Plenty Roleplay logo"
+              width={40}
+              height={40}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </div>
+          <span className="truncate text-sm font-semibold text-sidebar-fg-active">
             BOPRP Fire Portal
           </span>
         </div>
@@ -102,7 +112,7 @@ export function Sidebar() {
           aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((open) => !open)}
-          className="flex h-9 w-9 items-center justify-center rounded-md text-sidebar-fg-active hover:bg-sidebar-hover"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-sidebar-fg-active hover:bg-sidebar-hover"
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
