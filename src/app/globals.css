@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/*
+  ---------------------------------------------------------------------------
+  BOPRP Fire Portal — theme tokens
+  ---------------------------------------------------------------------------
+  Every colour used by the portal is declared once here. Change a value in this
+  block and the whole portal reskins — no need to touch any component.
+  ---------------------------------------------------------------------------
+*/
+:root {
+  /* Sidebar (dark navy) */
+  --bg-sidebar: #0a1122;
+  --bg-sidebar-hover: #16203a;
+  --bg-sidebar-active: #1d2a4a;
+  --fg-sidebar: #a4b0cc;
+  --fg-sidebar-active: #ffffff;
+  --border-sidebar: #1b253f;
+
+  /* Content area (light) */
+  --bg-content: #f3f5f9;
+  --bg-card: #ffffff;
+  --fg-content: #0f172a;
+  --fg-muted: #5b6478;
+  --border-subtle: #e3e7ef;
+
+  /* Brand accent (fire service red) */
+  --accent: #d92d20;
+  --accent-hover: #b42318;
+  --accent-soft: #fef2f1;
+  --accent-fg: #ffffff;
+
+  /* Page banner gradient */
+  --banner-from: #0a1122;
+  --banner-via: #16233f;
+  --banner-to: #6b1410;
+  --fg-banner: #ffffff;
+  --fg-banner-muted: #c3cbdd;
+
+  /* Optional banner photo. Drop a file in /public/images and set it here,
+     e.g. url("/images/banner.jpg"). Leave as `none` for gradient only. */
+  --banner-image: none;
+}
+
+/* Map the tokens above into Tailwind utilities (bg-sidebar, text-accent, ...) */
+@theme inline {
+  --color-sidebar: var(--bg-sidebar);
+  --color-sidebar-hover: var(--bg-sidebar-hover);
+  --color-sidebar-active: var(--bg-sidebar-active);
+  --color-sidebar-fg: var(--fg-sidebar);
+  --color-sidebar-fg-active: var(--fg-sidebar-active);
+  --color-sidebar-border: var(--border-sidebar);
+
+  --color-content: var(--bg-content);
+  --color-card: var(--bg-card);
+  --color-ink: var(--fg-content);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--border-subtle);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-banner-fg: var(--fg-banner);
+  --color-banner-fg-muted: var(--fg-banner-muted);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg-content);
+  color: var(--fg-content);
+}
+
+/* Banner background: gradient, with an optional photo layered on top. */
+.banner-surface {
+  background-image: var(--banner-image),
+    linear-gradient(
+      110deg,
+      var(--banner-from) 0%,
+      var(--banner-via) 55%,
+      var(--banner-to) 100%
+    );
+  background-size: cover;
+  background-position: center;
+}
