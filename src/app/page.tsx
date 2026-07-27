@@ -1,17 +1,13 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
 import { AnnouncementFeed } from "@/components/AnnouncementFeed";
-import { LeadershipSpotlight } from "@/components/LeadershipSpotlight";
 import { announcements } from "@/data/announcements";
-import { StationsIcon, FleetIcon } from "@/components/icons";
+import { navItems } from "@/data/nav";
+import { iconByKey } from "@/components/icons";
 
-const commandRoles = ["Fire Commissioner", "Deputy Commissioner"];
+const quickLinks = navItems.filter((item) => item.href !== "/");
 
 export default function HomePage() {
-  const latestCommandPost = [...announcements]
-    .filter((post) => commandRoles.includes(post.authorRole))
-    .sort((a, b) => b.date.localeCompare(a.date))[0];
-
   return (
     <>
       <Banner
@@ -40,46 +36,40 @@ export default function HomePage() {
             </p>
           </div>
 
-          {latestCommandPost && <LeadershipSpotlight post={latestCommandPost} />}
-
           <div>
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">
               Quick links
             </h2>
             <div className="flex flex-col gap-3">
-              <Link
-                href="/stations"
-                className="group flex items-center gap-4 rounded-2xl border border-subtle bg-card p-5 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                  <StationsIcon />
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold text-ink">
-                    Stations
-                  </span>
-                  <span className="block text-xs text-muted">
-                    Browse every station across the district
-                  </span>
-                </span>
-              </Link>
-
-              <Link
-                href="/fleet"
-                className="group flex items-center gap-4 rounded-2xl border border-subtle bg-card p-5 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                  <FleetIcon />
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold text-ink">
-                    Vehicle Fleet
-                  </span>
-                  <span className="block text-xs text-muted">
-                    See appliances by type across the department
-                  </span>
-                </span>
-              </Link>
+              {quickLinks.map((item) => {
+                const Icon = iconByKey[item.icon];
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="group flex items-center gap-4 rounded-2xl border border-subtle bg-card p-5 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:border-accent hover:shadow-md"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                      <Icon />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-2">
+                        <span className="block text-sm font-semibold text-ink">
+                          {item.label}
+                        </span>
+                        {item.comingSoon && (
+                          <span className="rounded-full border border-subtle px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-muted">
+                            soon
+                          </span>
+                        )}
+                      </span>
+                      <span className="block text-xs text-muted">
+                        {item.description}
+                      </span>
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </aside>

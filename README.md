@@ -14,9 +14,10 @@ What's included:
 - **Layout**: dark sidebar nav (collapses to a top bar under `md`), with a
   full-width banner header on every page pairing the Fire Rescue Rauora
   crest and the Bay of Plenty Roleplay community logo.
-- **Home**: an announcement feed from department leadership, sourced from
+- **Home**: an expandable announcement feed, sourced from
   [`src/data/announcements.ts`](src/data/announcements.ts), plus placeholder
-  welcome copy and quick links.
+  welcome copy and a Quick Links list covering every page in the sidebar
+  (including a "soon" label on the ones still awaiting stage 2).
 - **Stations**: card grid, with each station's department banner image,
   sourced from [`src/data/stations.ts`](src/data/stations.ts).
 - **Vehicle Fleet**: sectioned list (Pump/PRT, Aerial, Command/Hazmat, Rescue,
@@ -34,10 +35,14 @@ Non-devs can edit the portal's content without touching any component code:
   count, crew type, description, optional photo).
 - `src/data/fleet.ts`: one section per apparatus category, each with a list
   of vehicles (year, make/model, type, callsign, home station).
-- `src/data/nav.ts`: sidebar labels, order and which pages are marked
-  "coming soon".
-- `src/data/announcements.ts`: one object per post (title, body, author,
-  role, date, optional pinned flag), shown newest-first on the Home page.
+- `src/data/nav.ts`: sidebar labels, order, Quick Links descriptions and
+  which pages are marked "coming soon". Shared by the sidebar and the
+  Home page's Quick Links list, so it only needs editing in one place.
+- `src/data/announcements.ts`: one object per post (title, short summary,
+  fuller body, author, role, station/area, date, optional pinned flag),
+  shown newest-first on the Home page. Each card starts collapsed to the
+  summary; "View more" expands it to the full body plus submitted-by,
+  date and location detail.
 
 ### Images
 
