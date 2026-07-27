@@ -1,6 +1,6 @@
 import type { Announcement } from "@/data/announcements";
 
-const roleStyles: Record<string, string> = {
+export const roleStyles: Record<string, string> = {
   "Fire Commissioner": "bg-accent-soft text-accent",
   "Deputy Commissioner": "bg-amber-50 text-amber-700",
   Operations: "bg-sky-50 text-sky-700",
@@ -8,7 +8,7 @@ const roleStyles: Record<string, string> = {
   Communications: "bg-violet-50 text-violet-700",
 };
 
-function formatDate(iso: string) {
+export function formatDate(iso: string) {
   return new Date(`${iso}T00:00:00`).toLocaleDateString("en-NZ", {
     day: "numeric",
     month: "short",

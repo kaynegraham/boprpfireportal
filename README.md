@@ -47,7 +47,7 @@ Non-devs can edit the portal's content without touching any component code:
   the sidebar brand block and paired with the community logo on every
   page banner.
 - `public/images/firerescue-wordmark.webp`: the horizontal Fire Rescue
-  Rauora lockup, shown on the Home page.
+  Rauora lockup. Not currently used on a page; kept for future reuse.
 - `public/images/stations/*`: each station's department banner image,
   referenced from `src/data/stations.ts`.
 

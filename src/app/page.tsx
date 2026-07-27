@@ -1,11 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
 import { AnnouncementFeed } from "@/components/AnnouncementFeed";
+import { LeadershipSpotlight } from "@/components/LeadershipSpotlight";
 import { announcements } from "@/data/announcements";
 import { StationsIcon, FleetIcon } from "@/components/icons";
 
+const commandRoles = ["Fire Commissioner", "Deputy Commissioner"];
+
 export default function HomePage() {
+  const latestCommandPost = [...announcements]
+    .filter((post) => commandRoles.includes(post.authorRole))
+    .sort((a, b) => b.date.localeCompare(a.date))[0];
+
   return (
     <>
       <Banner
@@ -34,15 +40,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex items-center justify-center rounded-2xl border border-subtle bg-white p-6 shadow-sm">
-            <Image
-              src="/images/firerescue-wordmark.webp"
-              alt="Fire Rescue Rauora"
-              width={1100}
-              height={600}
-              className="h-auto w-full max-w-[220px] object-contain"
-            />
-          </div>
+          {latestCommandPost && <LeadershipSpotlight post={latestCommandPost} />}
 
           <div>
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted">
