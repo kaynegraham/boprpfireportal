@@ -9,7 +9,7 @@ type ComingSoonProps = {
  */
 export function ComingSoon({ title, description }: ComingSoonProps) {
   return (
-    <div className="flex flex-col items-center rounded-2xl border border-dashed border-subtle bg-card px-6 py-16 text-center">
+    <div className="flex flex-col items-center rounded-2xl border border-dashed border-subtle bg-card px-6 py-16 text-center shadow-sm">
       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-soft text-accent">
         <svg
           width="26"
@@ -28,7 +28,7 @@ export function ComingSoon({ title, description }: ComingSoonProps) {
       <h2 className="mt-4 text-lg font-semibold text-ink">{title}</h2>
       <p className="mt-2 max-w-md text-sm text-muted">
         {description ??
-          "Coming soon — this section requires login and will be available once member accounts go live."}
+          "Coming soon. This section requires login and will be available once member accounts go live."}
       </p>
       <span className="mt-5 inline-flex items-center rounded-full bg-accent-soft px-3 py-1 text-xs font-medium text-accent">
         Requires login &middot; stage 2

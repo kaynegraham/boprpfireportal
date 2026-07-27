@@ -16,7 +16,7 @@ export default function FleetPage() {
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="rounded-full border border-subtle bg-card px-3 py-1.5 text-xs font-medium text-muted hover:border-accent hover:text-accent"
+              className="rounded-full border border-subtle bg-card px-3 py-1.5 text-xs font-medium text-muted shadow-sm transition-colors hover:border-accent hover:text-accent"
             >
               {section.title}
             </a>
@@ -27,7 +27,7 @@ export default function FleetPage() {
           <section
             key={section.id}
             id={section.id}
-            className="scroll-mt-24 rounded-2xl border border-subtle bg-card p-6 sm:p-8"
+            className="scroll-mt-24 rounded-2xl border border-subtle bg-card p-6 shadow-sm sm:p-8"
           >
             <h2 className="text-lg font-semibold text-ink">
               {section.title}

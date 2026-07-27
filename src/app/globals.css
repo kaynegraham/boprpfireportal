@@ -1,13 +1,8 @@
 @import "tailwindcss";
 
-/*
-  ---------------------------------------------------------------------------
-  BOPRP Fire Portal — theme tokens
-  ---------------------------------------------------------------------------
-  Every colour used by the portal is declared once here. Change a value in this
-  block and the whole portal reskins — no need to touch any component.
-  ---------------------------------------------------------------------------
-*/
+/* BOPRP Fire Portal theme tokens: every colour the portal uses is declared
+   once here, so changing a value reskins the whole site with no component
+   edits needed. */
 :root {
   /* Sidebar (dark navy) */
   --bg-sidebar: #0a1122;

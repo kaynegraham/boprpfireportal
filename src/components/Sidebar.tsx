@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -21,14 +22,20 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
             key={item.href}
             href={item.href}
             onClick={onNavigate}
-            className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+            className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all duration-150 ${
               isActive
                 ? "bg-sidebar-active text-sidebar-fg-active"
                 : "text-sidebar-fg hover:bg-sidebar-hover hover:text-sidebar-fg-active"
             }`}
           >
+            {isActive && (
+              <span
+                aria-hidden
+                className="absolute inset-y-1.5 left-0 w-1 rounded-full bg-accent"
+              />
+            )}
             <Icon
-              className={`shrink-0 ${
+              className={`shrink-0 transition-colors ${
                 isActive ? "text-accent" : "text-sidebar-fg group-hover:text-sidebar-fg-active"
               }`}
             />
@@ -48,8 +55,15 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 function SidebarBrand() {
   return (
     <div className="flex items-center gap-3 border-b border-sidebar-border px-4 py-5">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent text-sm font-bold text-accent-fg">
-        BOP
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white p-1.5 shadow">
+        <Image
+          src="/images/firerescue.webp"
+          alt="Fire Rescue Rauora crest"
+          width={44}
+          height={44}
+          className="h-full w-full object-contain"
+          priority
+        />
       </div>
       <div className="leading-tight">
         <p className="text-sm font-semibold text-sidebar-fg-active">
@@ -69,8 +83,15 @@ export function Sidebar() {
       {/* Mobile top bar */}
       <header className="sticky top-0 z-30 flex items-center justify-between border-b border-sidebar-border bg-sidebar px-4 py-3 md:hidden">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-accent text-xs font-bold text-accent-fg">
-            BOP
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white p-1 shadow">
+            <Image
+              src="/images/firerescue.webp"
+              alt="Fire Rescue Rauora crest"
+              width={32}
+              height={32}
+              className="h-full w-full object-contain"
+              priority
+            />
           </div>
           <span className="text-sm font-semibold text-sidebar-fg-active">
             BOPRP Fire Portal

@@ -37,7 +37,7 @@ export default function SopsPage() {
       />
 
       <div className="px-6 py-8 sm:px-10">
-        <div className="mb-6 max-w-3xl rounded-2xl border border-subtle bg-card p-5 text-sm text-muted">
+        <div className="mb-6 max-w-3xl rounded-2xl border border-subtle bg-card p-5 text-sm text-muted shadow-sm">
           This is placeholder content for stage 1. Document uploads and
           version history will be added once the document library is
           connected to real storage in a later stage.
@@ -47,7 +47,7 @@ export default function SopsPage() {
           {categories.map((category) => (
             <div
               key={category.name}
-              className="rounded-2xl border border-subtle bg-card p-5"
+              className="rounded-2xl border border-subtle bg-card p-5 shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
             >
               <h3 className="text-sm font-semibold text-ink">
                 {category.name}

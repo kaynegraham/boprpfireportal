@@ -11,7 +11,7 @@ export default function TrainingPage() {
       <div className="px-6 py-8 sm:px-10">
         <ComingSoon
           title="Training"
-          description="Coming soon — requires login. Training history and competency records will appear here once member accounts are backed by real data in stage 2."
+          description="Coming soon. This page requires login. Training history and competency records will appear here once member accounts are backed by real data in stage 2."
         />
       </div>
     </>

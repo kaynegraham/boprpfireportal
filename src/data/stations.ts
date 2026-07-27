@@ -1,23 +1,19 @@
 /**
- * ---------------------------------------------------------------------------
- * STATION LIST — safe to edit
- * ---------------------------------------------------------------------------
- * This file is just content. Add, remove or reorder stations here and the
- * Stations page updates automatically — no layout code needs to change.
+ * Station list. Safe to edit: add, remove or reorder stations here and the
+ * Stations page updates automatically, no layout code needs to change.
  *
- * To add a station, copy an existing block and change the values.
- * Every field is required except `image`.
+ * To add a station, copy an existing block and change the values. Every
+ * field is required except `image`.
  *
  * Station photos: drop a picture into `public/images/stations/` and set
  * `image: "/images/stations/your-file.jpg"`. If you leave `image` out, the
  * card shows a coloured placeholder with the callsign instead.
- * ---------------------------------------------------------------------------
  */
 
 export type Station = {
   /** Unique key used in the URL / React list. Lowercase, no spaces. */
   id: string;
-  /** Display name, e.g. "Tauranga Fire Station". */
+  /** Display name, e.g. "Tauranga City Fire Station". */
   name: string;
   /** Radio callsign shown on the card badge, e.g. "TGA". */
   callsign: string;
@@ -37,15 +33,16 @@ export type Station = {
 
 export const stations: Station[] = [
   {
-    id: "tauranga",
-    name: "Tauranga Fire Station",
+    id: "tauranga-city",
+    name: "Tauranga City Fire Station",
     callsign: "TGA",
     street: "1 Cameron Road",
     suburb: "Tauranga Central",
-    applianceCount: 5,
+    applianceCount: 8,
     crewType: "Career",
     description:
-      "Regional headquarters and the busiest station in the district. Houses the primary aerial appliance and the district command unit.",
+      "Department headquarters and the busiest station in the district. Houses the primary aerial appliance and the district command unit.",
+    image: "/images/stations/taurangastation.webp",
   },
   {
     id: "mount-maunganui",
@@ -53,10 +50,11 @@ export const stations: Station[] = [
     callsign: "MTM",
     street: "17 Totara Street",
     suburb: "Mount Maunganui",
-    applianceCount: 4,
+    applianceCount: 5,
     crewType: "Career",
     description:
       "Covers the port, the industrial precinct and the Mount. Primary hazmat response for the region.",
+    image: "/images/stations/maunganuistation.webp",
   },
   {
     id: "greerton",
@@ -64,54 +62,35 @@ export const stations: Station[] = [
     callsign: "GRT",
     street: "1237 Cameron Road",
     suburb: "Greerton",
-    applianceCount: 3,
-    crewType: "Composite",
-    description:
-      "Southern Tauranga cover, including the state highway corridor and Tauriko.",
-  },
-  {
-    id: "papamoa",
-    name: "Papamoa Fire Station",
-    callsign: "PPM",
-    street: "18 Gravatt Road",
-    suburb: "Papamoa",
-    applianceCount: 3,
-    crewType: "Composite",
-    description:
-      "Fast-growing coastal response area with a strong beach and surf rescue commitment.",
-  },
-  {
-    id: "te-puke",
-    name: "Te Puke Fire Station",
-    callsign: "TPK",
-    street: "130 Jellicoe Street",
-    suburb: "Te Puke",
-    applianceCount: 2,
-    crewType: "Volunteer",
-    description:
-      "Rural and orchard country cover, plus a long stretch of State Highway 2.",
-  },
-  {
-    id: "katikati",
-    name: "Katikati Fire Station",
-    callsign: "KTK",
-    street: "36 Main Road",
-    suburb: "Katikati",
-    applianceCount: 2,
-    crewType: "Volunteer",
-    description:
-      "Northern boundary station. Heavy rural fire and motor vehicle crash workload.",
-  },
-  {
-    id: "rotorua",
-    name: "Rotorua Fire Station",
-    callsign: "RTA",
-    street: "1176 Amohau Street",
-    suburb: "Rotorua Central",
     applianceCount: 4,
-    crewType: "Career",
+    crewType: "Composite",
     description:
-      "Lakes district hub. Supports forestry and geothermal incident response.",
+      "Southern Tauranga cover, including the state highway corridor and the rural fringe out to Tauriko.",
+    image: "/images/stations/greentonstation.webp",
+  },
+  {
+    id: "ohope",
+    name: "Ohope Fire Station",
+    callsign: "OHP",
+    street: "2 Pohutukawa Avenue",
+    suburb: "Ohope Beach",
+    applianceCount: 3,
+    crewType: "Volunteer",
+    description:
+      "Coastal station covering Ohope Beach and the western approaches to Whakatāne, with a strong surf and swiftwater rescue commitment.",
+    image: "/images/stations/ohopestation.webp",
+  },
+  {
+    id: "opotiki",
+    name: "Opotiki Fire Station",
+    callsign: "OPO",
+    street: "1 Bridge Street",
+    suburb: "Opotiki",
+    applianceCount: 4,
+    crewType: "Volunteer",
+    description:
+      "Eastern gateway station covering the Opotiki district, State Highway 2 and the surrounding rural and forestry land.",
+    image: "/images/stations/opotikistation.webp",
   },
   {
     id: "whakatane",
@@ -119,9 +98,10 @@ export const stations: Station[] = [
     callsign: "WHK",
     street: "10 Commerce Street",
     suburb: "Whakatāne",
-    applianceCount: 3,
+    applianceCount: 4,
     crewType: "Composite",
     description:
       "Eastern Bay operations, covering the harbour, the airport and the coastal highway.",
+    image: "/images/stations/whakatanestation.webp",
   },
 ];

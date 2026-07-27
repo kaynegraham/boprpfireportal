@@ -1,14 +1,10 @@
 /**
- * ---------------------------------------------------------------------------
- * VEHICLE FLEET — safe to edit
- * ---------------------------------------------------------------------------
- * This file is just content. The Vehicle Fleet page renders one section per
- * entry in `fleet`, in the order they appear here.
+ * Vehicle fleet. Safe to edit: the Vehicle Fleet page renders one section
+ * per entry in `fleet`, in the order they appear here.
  *
  * To add a vehicle, copy an existing line inside the right section's
- * `vehicles` list and change the values.
- * To add a whole new section, copy a whole `{ ... }` block.
- * ---------------------------------------------------------------------------
+ * `vehicles` list and change the values. To add a whole new section, copy
+ * a whole `{ ... }` block.
  */
 
 export type Vehicle = {
@@ -20,7 +16,7 @@ export type Vehicle = {
   type: string;
   /** Radio callsign, e.g. "TGA 401". */
   callsign: string;
-  /** Home station name — should match a station in stations.ts. */
+  /** Home station name, should match a station in stations.ts. */
   station: string;
 };
 
@@ -46,14 +42,14 @@ export const fleet: FleetSection[] = [
         makeModel: "Scania P280",
         type: "Type 3 Pump",
         callsign: "TGA 401",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2019,
         makeModel: "Scania P280",
         type: "Type 4 Pump Rescue Tender",
         callsign: "TGA 402",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2020,
@@ -77,38 +73,52 @@ export const fleet: FleetSection[] = [
         station: "Greerton Fire Station",
       },
       {
+        year: 2023,
+        makeModel: "Isuzu FRR 500",
+        type: "Type 3 Pump",
+        callsign: "GRT 422",
+        station: "Greerton Fire Station",
+      },
+      {
         year: 2022,
         makeModel: "Scania P320",
         type: "Type 3 Pump",
-        callsign: "PPM 431",
-        station: "Papamoa Fire Station",
-      },
-      {
-        year: 2015,
-        makeModel: "Mitsubishi Fuso Fighter",
-        type: "Type 3 Pump",
-        callsign: "TPK 441",
-        station: "Te Puke Fire Station",
+        callsign: "OHP 431",
+        station: "Ohope Fire Station",
       },
       {
         year: 2016,
         makeModel: "Mitsubishi Fuso Fighter",
         type: "Type 3 Pump",
-        callsign: "KTK 451",
-        station: "Katikati Fire Station",
+        callsign: "OHP 432",
+        station: "Ohope Fire Station",
       },
       {
-        year: 2020,
-        makeModel: "Scania P280",
+        year: 2015,
+        makeModel: "Mitsubishi Fuso Fighter",
         type: "Type 3 Pump",
-        callsign: "RTA 461",
-        station: "Rotorua Fire Station",
+        callsign: "OPO 441",
+        station: "Opotiki Fire Station",
+      },
+      {
+        year: 2019,
+        makeModel: "Isuzu FTR 900",
+        type: "Type 3 Pump",
+        callsign: "OPO 442",
+        station: "Opotiki Fire Station",
       },
       {
         year: 2018,
         makeModel: "MAN TGM 15.290",
         type: "Type 4 Pump Rescue Tender",
         callsign: "WHK 471",
+        station: "Whakatāne Fire Station",
+      },
+      {
+        year: 2020,
+        makeModel: "Scania P280",
+        type: "Type 3 Pump",
+        callsign: "WHK 472",
         station: "Whakatāne Fire Station",
       },
     ],
@@ -124,7 +134,7 @@ export const fleet: FleetSection[] = [
         makeModel: "Scania P360 / Bronto Skylift F32",
         type: "32m Aerial Platform",
         callsign: "TGA 405",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2014,
@@ -137,8 +147,8 @@ export const fleet: FleetSection[] = [
         year: 2016,
         makeModel: "Scania P320 / Magirus M32L",
         type: "32m Turntable Ladder",
-        callsign: "RTA 465",
-        station: "Rotorua Fire Station",
+        callsign: "WHK 475",
+        station: "Whakatāne Fire Station",
       },
     ],
   },
@@ -153,14 +163,14 @@ export const fleet: FleetSection[] = [
         makeModel: "Mercedes-Benz Sprinter 519",
         type: "District Command Unit",
         callsign: "TGA 490",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2019,
         makeModel: "Ford Ranger Wildtrak",
         type: "Operations Support / Safety Officer",
         callsign: "TGA 491",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2020,
@@ -182,28 +192,28 @@ export const fleet: FleetSection[] = [
     id: "rescue-specialist",
     title: "Rescue / Specialist",
     description:
-      "Technical rescue capability — road crash extrication beyond standard PRT kit, rope and confined space rescue, and swiftwater and surf response along the coastal stations.",
+      "Technical rescue capability beyond standard PRT kit: road crash extrication, rope and confined space rescue, and swiftwater and surf response along the coastal stations.",
     vehicles: [
       {
         year: 2018,
         makeModel: "Scania P280",
         type: "Heavy Rescue Tender",
         callsign: "TGA 407",
-        station: "Tauranga Fire Station",
-      },
-      {
-        year: 2021,
-        makeModel: "Isuzu NPS 75 4x4",
-        type: "Urban Search & Rescue Support",
-        callsign: "RTA 467",
-        station: "Rotorua Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2023,
         makeModel: "Toyota Hilux SR5 4x4",
         type: "Surf / Swiftwater Rescue Unit",
-        callsign: "PPM 437",
-        station: "Papamoa Fire Station",
+        callsign: "OHP 437",
+        station: "Ohope Fire Station",
+      },
+      {
+        year: 2021,
+        makeModel: "Isuzu NPS 75 4x4",
+        type: "Urban Search & Rescue Support",
+        callsign: "OPO 447",
+        station: "Opotiki Fire Station",
       },
     ],
   },
@@ -217,22 +227,15 @@ export const fleet: FleetSection[] = [
         year: 2019,
         makeModel: "Scania P360 6x4",
         type: "12,000L Water Tanker",
-        callsign: "TPK 448",
-        station: "Te Puke Fire Station",
+        callsign: "OPO 448",
+        station: "Opotiki Fire Station",
       },
       {
         year: 2016,
         makeModel: "Isuzu FTS 800 4x4",
         type: "Rural Fire Appliance",
-        callsign: "KTK 458",
-        station: "Katikati Fire Station",
-      },
-      {
-        year: 2020,
-        makeModel: "Isuzu FTS 800 4x4",
-        type: "Rural Fire Appliance",
-        callsign: "RTA 468",
-        station: "Rotorua Fire Station",
+        callsign: "GRT 428",
+        station: "Greerton Fire Station",
       },
       {
         year: 2015,
@@ -254,14 +257,14 @@ export const fleet: FleetSection[] = [
         makeModel: "Isuzu NQR 87",
         type: "Breathing Apparatus Support Unit",
         callsign: "TGA 495",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2017,
         makeModel: "Mercedes-Benz Sprinter 416",
         type: "Canteen / Welfare Unit",
         callsign: "TGA 496",
-        station: "Tauranga Fire Station",
+        station: "Tauranga City Fire Station",
       },
       {
         year: 2022,

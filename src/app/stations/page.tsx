@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Banner } from "@/components/Banner";
 import { stations } from "@/data/stations";
 
@@ -20,20 +21,23 @@ export default function StationsPage() {
           {stations.map((station) => (
             <article
               key={station.id}
-              className="flex flex-col overflow-hidden rounded-2xl border border-subtle bg-card"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-subtle bg-card shadow-sm transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md"
             >
-              {station.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={station.image}
-                  alt={`${station.name} building`}
-                  className="h-40 w-full object-cover"
-                />
-              ) : (
-                <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-sidebar to-[#2a1210] text-2xl font-bold tracking-widest text-white/80">
-                  {station.callsign}
-                </div>
-              )}
+              <div className="relative aspect-video w-full shrink-0 overflow-hidden bg-sidebar">
+                {station.image ? (
+                  <Image
+                    src={station.image}
+                    alt={`${station.name} department banner`}
+                    fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-sidebar to-[#2a1210] text-2xl font-bold tracking-widest text-white/80">
+                    {station.callsign}
+                  </div>
+                )}
+              </div>
 
               <div className="flex flex-1 flex-col gap-3 p-5">
                 <div className="flex items-start justify-between gap-3">
