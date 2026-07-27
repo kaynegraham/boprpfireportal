@@ -12,9 +12,11 @@ There is **no authentication, no database and no API routes** yet.
 What's included:
 
 - **Layout**: dark sidebar nav (collapses to a top bar under `md`), with a
-  full-width banner header on every page and the Fire Rescue Rauora crest
-  used as the site's logo mark.
-- **Home**: placeholder welcome copy and quick links.
+  full-width banner header on every page pairing the Fire Rescue Rauora
+  crest and the Bay of Plenty Roleplay community logo.
+- **Home**: an announcement feed from department leadership, sourced from
+  [`src/data/announcements.ts`](src/data/announcements.ts), plus placeholder
+  welcome copy and quick links.
 - **Stations**: card grid, with each station's department banner image,
   sourced from [`src/data/stations.ts`](src/data/stations.ts).
 - **Vehicle Fleet**: sectioned list (Pump/PRT, Aerial, Command/Hazmat, Rescue,
@@ -34,13 +36,16 @@ Non-devs can edit the portal's content without touching any component code:
   of vehicles (year, make/model, type, callsign, home station).
 - `src/data/nav.ts`: sidebar labels, order and which pages are marked
   "coming soon".
+- `src/data/announcements.ts`: one object per post (title, body, author,
+  role, date, optional pinned flag), shown newest-first on the Home page.
 
 ### Images
 
 - `public/images/boprplogo.webp`: the Bay of Plenty Roleplay community
   logo, used as the browser favicon.
-- `public/images/firerescue.webp`: the Fire Rescue Rauora crest, used as
-  the sidebar and banner logo mark.
+- `public/images/firerescue.webp`: the Fire Rescue Rauora crest, used in
+  the sidebar brand block and paired with the community logo on every
+  page banner.
 - `public/images/firerescue-wordmark.webp`: the horizontal Fire Rescue
   Rauora lockup, shown on the Home page.
 - `public/images/stations/*`: each station's department banner image,
