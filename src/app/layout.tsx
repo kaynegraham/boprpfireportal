@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BOPRP Fire Portal",
   description:
-    "Bay of Plenty RP Fire & Emergency department portal for rosters, SOPs, training and fleet information.",
+    "Fire Rescue New Zealand department portal for rosters, SOPs, training and fleet information.",
   icons: {
     icon: "/images/boprplogo.webp",
   },

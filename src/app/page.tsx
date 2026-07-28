@@ -12,7 +12,7 @@ export default function HomePage() {
     <>
       <Banner
         title="Welcome to the BOPRP Fire Portal"
-        subtitle="The internal home for Bay of Plenty RP Fire & Emergency: station information, apparatus records, training and policy in one place."
+        subtitle="The internal home for Fire Rescue New Zealand: station information, apparatus records, training and policy in one place."
       />
 
       <div className="flex flex-1 flex-col gap-8 px-6 py-8 sm:px-10 lg:grid lg:grid-cols-[1.7fr_1fr] lg:items-start">

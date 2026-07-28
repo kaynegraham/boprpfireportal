@@ -1,8 +1,8 @@
 # BOPRP Fire Portal
 
-Internal department portal for **Bay of Plenty RP Fire & Emergency**, a
-FiveM roleplay community. Built with Next.js 15 (App Router), TypeScript
-and Tailwind CSS.
+Internal department portal for **Fire Rescue New Zealand**, the fire
+department of the Bay of Plenty Roleplay FiveM community. Built with
+Next.js 15 (App Router), TypeScript and Tailwind CSS.
 
 ## Stage 1: this build
 
