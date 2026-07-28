@@ -12,7 +12,7 @@ There is **no authentication, no database and no API routes** yet.
 What's included:
 
 - **Layout**: dark sidebar nav (collapses to a top bar under `md`), with a
-  full-width banner header on every page pairing the Fire Rescue Rauora
+  full-width banner header on every page pairing the Fire Rescue New Zealand
   crest and the Bay of Plenty Roleplay community logo.
 - **Home**: an expandable announcement feed, sourced from
   [`src/data/announcements.ts`](src/data/announcements.ts), plus placeholder
@@ -48,11 +48,11 @@ Non-devs can edit the portal's content without touching any component code:
 
 - `public/images/boprplogo.webp`: the Bay of Plenty Roleplay community
   logo, used as the browser favicon.
-- `public/images/firerescue.webp`: the Fire Rescue Rauora crest, used in
+- `public/images/firerescue.webp`: the Fire Rescue New Zealand crest, used in
   the sidebar brand block and paired with the community logo on every
   page banner.
-- `public/images/firerescue-wordmark.webp`: the horizontal Fire Rescue
-  Rauora lockup. Not currently used on a page; kept for future reuse.
+- `public/images/firerescue-wordmark.webp`: the horizontal Fire Rescue New
+  Zealand lockup. Not currently used on a page; kept for future reuse.
 - `public/images/stations/*`: each station's department banner image,
   referenced from `src/data/stations.ts`.
 

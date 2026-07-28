@@ -58,7 +58,7 @@ function SidebarBrand() {
       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow">
         <Image
           src="/images/firerescue.webp"
-          alt="Fire Rescue Rauora crest"
+          alt="Fire Rescue New Zealand crest"
           width={56}
           height={56}
           className="h-full w-full object-contain"
@@ -86,7 +86,7 @@ export function Sidebar() {
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5 shadow">
             <Image
               src="/images/firerescue.webp"
-              alt="Fire Rescue Rauora crest"
+              alt="Fire Rescue New Zealand crest"
               width={40}
               height={40}
               className="h-full w-full object-contain"

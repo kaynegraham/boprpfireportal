@@ -27,7 +27,7 @@ export function Banner({ title, subtitle }: BannerProps) {
       <div className="relative mb-5 inline-flex items-center gap-3 rounded-2xl bg-white/95 px-3 py-2.5 shadow-lg ring-1 ring-black/5 backdrop-blur sm:absolute sm:right-10 sm:top-8 sm:mb-0 sm:gap-4 sm:px-4 sm:py-3">
         <Image
           src="/images/firerescue.webp"
-          alt="Fire Rescue Rauora crest"
+          alt="Fire Rescue New Zealand crest"
           width={96}
           height={96}
           className="h-12 w-12 object-contain sm:h-16 sm:w-16"
